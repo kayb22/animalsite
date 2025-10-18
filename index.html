@@ -23,6 +23,23 @@
             color: var(--deep);
             overflow-x: hidden;
         }
+        /* Котката, която следва курсора */
+        #cat-cursor {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 48px;
+            height: 48px;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.06s linear;
+            will-change: transform;
+            user-select: none;
+            display: none;
+        }
+        @media (max-width: 700px) {
+            #cat-cursor { display: none !important; }
+        }
         header {
             background: var(--headergradient);
             color: white;
@@ -404,6 +421,9 @@
     </style>
 </head>
 <body>
+    <!-- Котка, която следва курсора -->
+    <img id="cat-cursor" src="https://cdn.jsdelivr.net/gh/kayb22/paw-cursor-host@main/cat_black_emoji.png" alt="Cat Cursor" />
+
     <header>
         <h1><i class="fa-solid fa-paw"></i> Животните и ние</h1>
         <div class="project-authors">Проект от Александър, Габриел и Кристиан</div>
@@ -494,5 +514,27 @@
         &copy; 2025 Животните и ние | Saving Paws Bulgaria | Създадено с <span style="color:#ffbb33;font-size:1.2em;">&#10084;</span>
         <div class="made-by">made by Kristian Bankov</div>
     </footer>
+    <script>
+    // Котка, която следва курсора
+    const catCursor = document.getElementById('cat-cursor');
+    // Показва се само на компютър/лаптоп (не и на мобилно)
+    if(window.innerWidth > 700) catCursor.style.display = 'block';
+    document.addEventListener('mousemove', function(e) {
+        if(window.innerWidth <= 700) {
+            catCursor.style.display = 'none';
+            return;
+        }
+        catCursor.style.display = 'block';
+        // Местим котката малко надолу и надясно, за да не е точно под курсора
+        catCursor.style.transform = `translate(${e.clientX + 10}px, ${e.clientY + 10}px)`;
+    });
+    // Скрий котката, когато мишката напусне прозореца
+    document.addEventListener('mouseleave', function() {
+        catCursor.style.display = 'none';
+    });
+    document.addEventListener('mouseenter', function() {
+        if(window.innerWidth > 700) catCursor.style.display = 'block';
+    });
+    </script>
 </body>
 </html>
