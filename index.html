@@ -339,7 +339,7 @@
             background: var(--primary);
             color: #fff;
             text-align: center;
-            padding: 26px 0;
+            padding: 26px 0 8px 0;
             margin-top: 50px;
             font-size: 1.13em;
             font-family: 'Roboto', Arial, sans-serif;
@@ -358,6 +358,15 @@
             color: var(--accent);
             transform: scale(1.2) rotate(-8deg);
         }
+        .made-by {
+            margin-top: 12px;
+            font-size: 1em;
+            color: #fdf6ed;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            opacity: 0.7;
+            animation: fadeup 2.5s;
+        }
         @media (max-width: 1200px) {
             .cards { flex-direction: column; align-items: center;}
             .blog-list { grid-template-columns: 1fr;}
@@ -375,7 +384,6 @@
             font-family: 'Montserrat', Arial, sans-serif;
             letter-spacing: 2px;
         }
-        /* Extra animation for paw icon */
         .fa-paw {
             animation: pawBounce 2s infinite alternate;
         }
@@ -472,11 +480,10 @@
     </section>
     <footer>
         <div class="footer-icons">
-            <a href="https://facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/saving_paws_bulgaria/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:animalsite@school.bg" title="Имейл"><i class="fa-solid fa-envelope"></i></a>
         </div>
         &copy; 2025 Животните и ние | Saving Paws Bulgaria | Създадено с <span style="color:var(--accent);font-size:1.2em;">&#10084;</span>
+        <div class="made-by">made by Kristian Bankov</div>
     </footer>
 </body>
 </html>
