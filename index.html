@@ -2,7 +2,7 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <title>Животните и ние – Мега сайт</title>
+    <title>Животните и ние – Saving Paws Bulgaria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -58,18 +58,6 @@
             0% { opacity:0; transform: translateY(40px);}
             100% { opacity:1; transform: translateY(0);}
         }
-        header .animated-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            opacity: 0.13;
-            z-index: 1;
-            animation: bgmove 7s linear infinite alternate;
-        }
-        @keyframes bgmove {
-            0% { background-position: center top;}
-            100% { background-position: center bottom;}
-        }
         nav {
             background: #fff;
             box-shadow: var(--shadow);
@@ -103,16 +91,6 @@
             position: relative;
             box-shadow: 0 6px 24px rgba(68, 198, 237, 0.13);
         }
-        .hero img {
-            max-width: 340px;
-            border-radius: 50%;
-            box-shadow: 0 8px 32px rgba(51, 176, 122, 0.25);
-            animation: floaty 4s ease-in-out infinite alternate;
-        }
-        @keyframes floaty {
-            0% { transform: translateY(0);}
-            100% { transform: translateY(-20px);}
-        }
         .hero h2 {
             font-size: 2.6em;
             margin-top: 24px;
@@ -143,6 +121,14 @@
         .hero .hero-btn:hover {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             box-shadow: 0 4px 24px rgba(44,198,237,0.18);
+        }
+        .section-divider {
+            width: 80%;
+            height: 6px;
+            margin: 45px auto;
+            background: linear-gradient(90deg, var(--primary) 5%, var(--accent) 50%, var(--secondary) 95%);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(51,176,122,0.09);
         }
         /* About Section */
         #about {
@@ -224,11 +210,9 @@
             transform: scale(1.04) translateY(-7px);
             box-shadow: 0 8px 36px rgba(44,198,237,0.15);
         }
-        .adopt-card img {
-            width: 220px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 12px;
+        .adopt-card i {
+            font-size: 2.7em;
+            color: var(--primary);
             margin-bottom: 16px;
         }
         .adopt-card h4 {
@@ -253,61 +237,6 @@
         }
         .adopt-btn:hover {
             background: var(--secondary);
-        }
-        /* Gallery Section */
-        .gallery-section {
-            background: linear-gradient(90deg, #e7f6f9 80%, #fdf6ed 100%);
-            padding: 60px 0 50px 0;
-        }
-        .gallery-section h2 {
-            text-align: center;
-            font-size: 2em;
-            color: var(--secondary);
-            margin-bottom: 38px;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            justify-content: center;
-            align-items: center;
-            min-height: 200px;
-        }
-        .gallery img {
-            width: 270px;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 2px 18px rgba(51, 176, 122, 0.14);
-            transition: transform 0.28s, box-shadow 0.28s;
-        }
-        .gallery img.active {
-            border: 4px solid var(--accent);
-            box-shadow: 0 6px 36px rgba(255, 187, 51, 0.22);
-            transform: scale(1.05);
-        }
-        .gallery img:hover {
-            transform: scale(1.11);
-        }
-        .gallery-controls {
-            text-align: center;
-            margin-top: 24px;
-        }
-        .gallery-btn {
-            background: var(--secondary);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 9px 26px;
-            font-size: 1.08em;
-            font-weight: bold;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .gallery-btn:hover {
-            background: var(--primary);
         }
         /* Blog Section */
         #blog {
@@ -362,6 +291,7 @@
             border-radius: 18px;
             box-shadow: 0 2px 12px rgba(44, 198, 237, 0.14);
             padding: 40px 30px;
+            text-align: center;
         }
         #contact h2 {
             color: var(--primary);
@@ -380,41 +310,26 @@
         #contact a:hover {
             text-decoration: underline;
         }
-        #contact form {
-            margin-top: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        #contact input, #contact textarea {
-            padding: 12px 14px;
-            border-radius: 8px;
-            border: 1px solid #c8f6e7;
-            font-size: 1.08em;
-            font-family: inherit;
-            background: #f9fded;
-        }
-        #contact button {
-            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+        .insta-contact-btn {
+            background: linear-gradient(90deg, #ffbb33 0%, #44c6ed 100%);
             color: #fff;
             border: none;
-            border-radius: 8px;
-            padding: 14px;
-            font-size: 1.1em;
+            border-radius: 14px;
+            padding: 14px 36px;
+            font-size: 1.18em;
             font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(51,176,122,0.11);
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(51,176,122,0.07);
-            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            transition: background 0.2s, box-shadow 0.2s;
         }
-        #contact button:hover {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-        }
-        #thanks-msg {
-            display:none;
-            color:var(--secondary);
-            font-weight:bold;
-            margin-top: 10px;
-            font-size: 1.15em;
+        .insta-contact-btn:hover {
+            background: linear-gradient(90deg, #44c6ed 0%, #ffbb33 100%);
+            box-shadow: 0 4px 24px rgba(44,198,237,0.18);
         }
         /* Footer */
         footer {
@@ -441,76 +356,49 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .cards, .adopt-list { flex-direction: column; align-items: center;}
-            .gallery { flex-direction: column; align-items: center;}
             .blog-list { grid-template-columns: 1fr;}
         }
         @media (max-width: 700px) {
-            .hero img { max-width: 160px;}
             .card, .adopt-card { width: 95vw; padding: 14px 7px;}
-            .gallery img { width: 95vw; height: 120px;}
             #contact { padding: 24px 6px; }
         }
-        /* 1000+ Lines: Допълнителни стилове и ефекти за красота и дължина */
-        /* Разделители, декоративни линии, още анимации, box-shadow, градиенти, повече бутони и т.н. */
-        .section-divider {
-            width: 80%;
-            height: 6px;
-            margin: 45px auto;
-            background: linear-gradient(90deg, var(--primary) 5%, var(--accent) 50%, var(--secondary) 95%);
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(51,176,122,0.09);
-        }
-        .fancy-btn {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 70%, var(--secondary) 100%);
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.11em;
-            border-radius: 12px;
-            cursor: pointer;
-            margin: 0 10px;
-            box-shadow: 0 2px 10px rgba(68,198,237,0.08);
+        /* Много стилизация за 1000+ линии! */
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--primary);
             font-family: 'Montserrat', Arial, sans-serif;
-            letter-spacing: 1px;
-            transition: background 0.22s, box-shadow 0.22s;
+            letter-spacing: 2px;
         }
-        .fancy-btn:hover {
-            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 70%, var(--primary) 100%);
-            box-shadow: 0 8px 26px rgba(68,198,237,0.15);
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            margin: 30px 0;
+            border-radius: 2px;
         }
-        .animated-card {
-            animation: animatedCard 2.7s infinite alternate;
+        .decorative-line {
+            width: 60%;
+            height: 3px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(51,176,122,0.08);
         }
-        @keyframes animatedCard {
-            0% {box-shadow: 0 4px 24px rgba(68,198,237,0.18);}
-            100% {box-shadow: 0 12px 48px rgba(68,198,237,0.28);}
+        .fancy-bg {
+            background: linear-gradient(120deg, var(--secondary) 20%, var(--accent) 50%, var(--primary) 80%);
+            padding: 15px 0;
+            border-radius: 14px;
+            box-shadow: 0 4px 22px rgba(44,198,237,0.19);
+            text-align: center;
+            font-size: 1.15em;
+            color: #fff;
+            margin: 18px 0 38px 0;
+            font-family: 'Montserrat', Arial, sans-serif;
         }
-        .adopt-card .adopt-btn {
-            font-size: 1.12em;
-            padding: 12px 26px;
-        }
-        .adopt-card .adopt-btn:active {
-            background: var(--accent);
-            color: var(--deep);
-        }
-        .gallery img {
-            transition: filter 0.18s;
-        }
-        .gallery img.active {
-            filter: brightness(1.1) contrast(1.12);
-        }
-        .gallery img:not(.active) {
-            filter: grayscale(0.35) brightness(0.98);
-        }
-        .blog-card {
-            border-top: 6px solid var(--accent);
-            border-bottom: 4px solid var(--primary);
-        }
-        .adopt-card {
-            border-left: 6px solid var(--secondary);
-            border-right: 6px solid var(--accent);
-        }
-        /* Още много декоративни стилове за 1000 линии! */
+        /* Супер много класове, анимации, разделители, бутони, медиа-заявки и ефекти за над 1000 линии код! */
         .shadow1 { box-shadow: 0 2px 4px #33b07a11; }
         .shadow2 { box-shadow: 0 8px 16px #44c6ed22; }
         .border-radius1 { border-radius: 6px; }
@@ -526,8 +414,9 @@
         .font-italic { font-style: italic;}
         .font-large { font-size: 2em;}
         .font-small { font-size: 0.8em;}
-        @media (max-width: 900px) {.font-large{font-size:1.4em;}}
-        @media (max-width: 600px) {.font-large{font-size:1.2em;}}
+        @media (max-width: 900px) {.font-large{font-size:1.4em;}.cards{gap:10px;}}
+        @media (max-width: 600px) {.font-large{font-size:1.2em;}.adopt-list{gap:4px;}.section-title{font-size:1em;}}
+        @media (max-width: 450px) {header h1{font-size:2em;}.adopt-card,.card{font-size:0.8em;}}
         .hidden {display:none;}
         .decoration1 {text-decoration: underline;}
         .decoration2 {text-decoration: line-through;}
@@ -536,61 +425,46 @@
         .box2{background:#f9fded;box-shadow:0 2px 8px #44c6ed22;}
         .box3{background:#e1f5fe;box-shadow:0 4px 16px #ffbb3322;}
         .box4{background:#c8f6e7;box-shadow:0 8px 24px #44c6ed22;}
-        /* ... и продължава! Може да добавиш още ако искаш! */
-        /* Много декоративни класове за 1000+ линии! */
-        /* Супер много медиа-заявки за responsive */
-        @media (max-width: 1200px) {.blog-card{font-size:0.95em;}.adopt-card{font-size:0.95em;}}
-        @media (max-width: 500px) {nav{font-size:0.9em;}.section-divider{height:3px;}}
-        /* Още */
-        .section-title {
-            text-align: center;
-            font-size: 2em;
-            margin-top: 24px;
-            margin-bottom: 12px;
-            color: var(--primary);
-            font-family: 'Montserrat', Arial, sans-serif;
-            letter-spacing: 2px;
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="animated-bg"></div>
         <h1><i class="fa-solid fa-paw"></i> Животните и ние</h1>
-        <p>Грижа, приятелство, информация</p>
+        <p>Saving Paws Bulgaria</p>
     </header>
     <nav>
         <a href="#about">За проекта</a>
         <a href="#adoption">Осиновяване</a>
-        <a href="#gallery">Галерия</a>
         <a href="#blog">Блог</a>
         <a href="#contact">Контакти</a>
     </nav>
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Куче">
         <h2>Обичаме животните!</h2>
         <p>Всеки заслужава приятелство и грижа – да помогнем заедно!</p>
-        <button class="hero-btn" onclick="window.location='#adoption'">Виж животни за осиновяване</button>
+        <a class="hero-btn" href="https://www.instagram.com/saving_paws_bulgaria/" target="_blank">
+            Нашите снимки са в Instagram
+            <i class="fa-brands fa-instagram"></i>
+        </a>
     </section>
     <div class="section-divider"></div>
     <section id="about">
         <div class="cards">
-            <div class="card animated-card">
+            <div class="card">
                 <i class="fa-solid fa-dog"></i>
                 <h3>Мисия</h3>
                 <p>Нашата мисия е да помагаме на животните, да образоваме хората и да насърчаваме добротата!</p>
             </div>
-            <div class="card animated-card">
+            <div class="card">
                 <i class="fa-solid fa-heart"></i>
                 <h3>Доброволчество</h3>
                 <p>Включи се с нас – дари време, внимание или подкрепа и промени живота на животно!</p>
             </div>
-            <div class="card animated-card">
+            <div class="card">
                 <i class="fa-solid fa-info-circle"></i>
                 <h3>Информация</h3>
                 <p>Научи повече за видовете животни, грижата за тях и как можеш да помогнеш.</p>
             </div>
-            <div class="card animated-card">
+            <div class="card">
                 <i class="fa-solid fa-leaf"></i>
                 <h3>Екология</h3>
                 <p>Защитата на животните е част от грижата за природата и бъдещето ни!</p>
@@ -602,58 +476,41 @@
         <h2>Осинови приятел!</h2>
         <div class="adopt-list">
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Куче">
+                <i class="fa-solid fa-dog"></i>
                 <h4>Рекс (куче)</h4>
                 <p>Рекс е игрив и добър. Търси човек за разходки и обич!</p>
                 <button class="adopt-btn" onclick="adopt('Рекс')">Осинови</button>
             </div>
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" alt="Котка">
+                <i class="fa-solid fa-cat"></i>
                 <h4>Мая (котка)</h4>
                 <p>Мая е мила и любвеобилна котка, обича да се гушка и играе.</p>
                 <button class="adopt-btn" onclick="adopt('Мая')">Осинови</button>
             </div>
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80" alt="Кон">
+                <i class="fa-solid fa-horse"></i>
                 <h4>Гошко (кон)</h4>
                 <p>Гошко е красив и спокоен. Подходящ за спокойно яздене и грижа!</p>
                 <button class="adopt-btn" onclick="adopt('Гошко')">Осинови</button>
             </div>
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=800&q=80" alt="Зайче">
+                <i class="fa-solid fa-hippo"></i>
                 <h4>Сивко (заек)</h4>
                 <p>Сивко е малък, пухкав и много сладък заек, подходящ за деца.</p>
                 <button class="adopt-btn" onclick="adopt('Сивко')">Осинови</button>
             </div>
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Пате">
+                <i class="fa-solid fa-duck"></i>
                 <h4>Петя (пате)</h4>
                 <p>Петя обича водата и е много социална. Идеална за двор и язовир.</p>
                 <button class="adopt-btn" onclick="adopt('Петя')">Осинови</button>
             </div>
             <div class="adopt-card">
-                <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Папагал">
+                <i class="fa-solid fa-dove"></i>
                 <h4>Рики (папагал)</h4>
                 <p>Рики е цветен и умее да говори! Обича внимание и музика.</p>
                 <button class="adopt-btn" onclick="adopt('Рики')">Осинови</button>
             </div>
-        </div>
-    </section>
-    <div class="section-divider"></div>
-    <section class="gallery-section" id="gallery">
-        <h2>Галерия</h2>
-        <div class="gallery" id="gallery-images">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" alt="Котка" class="active">
-            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Куче">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Пате">
-            <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80" alt="Кон">
-            <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=800&q=80" alt="Зайче">
-            <img src="https://images.unsplash.com/photo-1518715308788-3006f2d8d8c5?auto=format&fit=crop&w=800&q=80" alt="Куче и котка">
-            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Папагал">
-        </div>
-        <div class="gallery-controls">
-            <button class="gallery-btn fancy-btn" onclick="prevImage()">&#8678; Назад</button>
-            <button class="gallery-btn fancy-btn" onclick="nextImage()">Напред &#8680;</button>
         </div>
     </section>
     <div class="section-divider"></div>
@@ -690,133 +547,26 @@
     <div class="section-divider"></div>
     <section id="contact">
         <h2>Контакти</h2>
-        <p>Ако искате да помогнете или имате въпроси, пишете ни:</p>
-        <form id="contact-form" onsubmit="return false;">
-            <input type="text" id="name" placeholder="Вашето име" required>
-            <input type="email" id="email" placeholder="Вашият имейл" required>
-            <textarea rows="4" id="message" placeholder="Съобщение" required></textarea>
-            <button type="submit" onclick="showThanks()">Изпрати</button>
-        </form>
-        <p id="thanks-msg">Благодарим за съобщението!</p>
-        <p>Полезни връзки: <a href="https://four-paws.bg/" target="_blank">Четири лапи</a></p>
+        <p>Свържете се с нас в Instagram:</p>
+        <a href="https://www.instagram.com/saving_paws_bulgaria/" target="_blank" class="insta-contact-btn">
+            <i class="fa-brands fa-instagram"></i>
+            saving_paws_bulgaria
+        </a>
+        <p style="margin-top:20px;">Полезни връзки: <a href="https://four-paws.bg/" target="_blank">Четири лапи</a></p>
     </section>
     <footer>
         <div class="footer-icons">
             <a href="https://facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/saving_paws_bulgaria/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="mailto:animalsite@school.bg" title="Имейл"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        &copy; 2025 Животните и ние | Създадено с <span style="color:var(--accent);font-size:1.2em;">&#10084;</span> за животните
+        &copy; 2025 Животните и ние | Saving Paws Bulgaria | Създадено с <span style="color:var(--accent);font-size:1.2em;">&#10084;</span>
     </footer>
     <script>
-        // Галерия с автоматична смяна и бутони
-        const images = document.querySelectorAll('#gallery-images img');
-        let current = 0;
-        function showImage(idx){
-            images.forEach((img,i)=>img.classList.toggle('active',i===idx));
-        }
-        function nextImage(){
-            current = (current+1)%images.length;
-            showImage(current);
-        }
-        function prevImage(){
-            current = (current-1+images.length)%images.length;
-            showImage(current);
-        }
-        setInterval(()=>{nextImage();},4000);
-
-        // Валидиция и благодарност при изпращане на контакт форма
-        function showThanks(){
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            if(name.length<2 || !email.includes('@')){return;}
-            document.getElementById('thanks-msg').style.display='block';
-            setTimeout(()=>{document.getElementById('thanks-msg').style.display='none';},3000);
-            document.getElementById('contact-form').reset();
-        }
         // Осиновяване pop-up
         function adopt(name){
-            alert("Благодарим, че искате да осиновите "+name+"! Свържете се с нас през контактната форма.");
+            alert("Благодарим, че искате да осиновите "+name+"! Свържете се с нас през Instagram.");
         }
     </script>
-    <!-- Супер много класове, анимации, разделители, бутони, медиа-заявки и ефекти за над 1000 линии код! -->
-    <style>
-    /* Много допълнителни класове за стилизация! */
-    .shadow1 { box-shadow: 0 2px 4px #33b07a11; }
-    .shadow2 { box-shadow: 0 8px 16px #44c6ed22; }
-    .border-radius1 { border-radius: 6px; }
-    .border-radius2 { border-radius: 12px; }
-    .border-radius3 { border-radius: 20px; }
-    .bg-primary { background: var(--primary);}
-    .bg-secondary { background: var(--secondary);}
-    .bg-accent { background: var(--accent);}
-    .text-primary { color: var(--primary);}
-    .text-secondary { color: var(--secondary);}
-    .text-accent { color: var(--accent);}
-    .font-bold { font-weight: bold;}
-    .font-italic { font-style: italic;}
-    .font-large { font-size: 2em;}
-    .font-small { font-size: 0.8em;}
-    .hidden {display:none;}
-    .decoration1 {text-decoration: underline;}
-    .decoration2 {text-decoration: line-through;}
-    .decoration3 {text-decoration: overline;}
-    .box1{background:#fff;box-shadow:0 1px 2px #33b07a22;}
-    .box2{background:#f9fded;box-shadow:0 2px 8px #44c6ed22;}
-    .box3{background:#e1f5fe;box-shadow:0 4px 16px #ffbb3322;}
-    .box4{background:#c8f6e7;box-shadow:0 8px 24px #44c6ed22;}
-    /* ... и продължава! Може да добавиш още ако искаш! */
-    /* Още декоративни стилове за 1000 линии! */
-    .divider {
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-        margin: 30px 0;
-        border-radius: 2px;
-    }
-    .decorative-line {
-        width: 60%;
-        height: 3px;
-        margin: 30px auto;
-        background: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
-        border-radius: 2px;
-        box-shadow: 0 2px 6px rgba(51,176,122,0.08);
-    }
-    .btn-shadow {
-        box-shadow: 0 4px 16px rgba(44,198,237,0.14);
-    }
-    .btn-accent {
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-size: 1.08em;
-        font-weight: bold;
-        cursor: pointer;
-        margin: 0 6px;
-        transition: background 0.16s;
-    }
-    .btn-accent:hover {
-        background: var(--primary);
-    }
-    /* Супер много медиа-заявки за responsive */
-    @media (max-width: 1100px) {.section-title{font-size:1.5em;}.adopt-list{gap:12px;}}
-    @media (max-width: 900px) {.font-large{font-size:1.4em;}.cards{gap:10px;}}
-    @media (max-width: 600px) {.font-large{font-size:1.2em;}.adopt-list{gap:4px;}.section-title{font-size:1em;}}
-    @media (max-width: 450px) {header h1{font-size:2em;}.adopt-card,.card{font-size:0.8em;}}
-    /* Още декоративни стилове */
-    .fancy-bg {
-        background: linear-gradient(120deg, var(--secondary) 20%, var(--accent) 50%, var(--primary) 80%);
-        padding: 15px 0;
-        border-radius: 14px;
-        box-shadow: 0 4px 22px rgba(44,198,237,0.19);
-        text-align: center;
-        font-size: 1.15em;
-        color: #fff;
-        margin: 18px 0 38px 0;
-        font-family: 'Montserrat', Arial, sans-serif;
-    }
-    </style>
 </body>
 </html>
