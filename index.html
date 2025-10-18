@@ -16,13 +16,15 @@
             --headergradient: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
             --shadow: 0 4px 24px rgba(68, 198, 237, 0.18);
         }
+        body, a, button, input, textarea, select, .hero-btn {
+            cursor: none !important;
+        }
         body {
             margin: 0;
             font-family: 'Roboto', Arial, sans-serif;
             background: var(--light);
             color: var(--deep);
             overflow-x: hidden;
-            cursor: none;
         }
         /* Котка, която следва курсора */
         #cat-cursor {
@@ -525,7 +527,8 @@
             return;
         }
         catCursor.style.display = 'block';
-        catCursor.style.transform = `translate(${e.clientX + 10}px, ${e.clientY + 10}px)`;
+        // Плътно до курсора (горе вляво на курсора)
+        catCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
     document.addEventListener('mouseleave', function() {
         catCursor.style.display = 'none';
