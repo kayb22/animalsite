@@ -23,13 +23,13 @@
             color: var(--deep);
             overflow-x: hidden;
         }
-        /* Котката, която следва курсора */
+        /* Котка, която следва курсора */
         #cat-cursor {
             position: fixed;
             left: 0;
             top: 0;
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             pointer-events: none;
             z-index: 9999;
             transition: transform 0.06s linear;
@@ -422,7 +422,7 @@
 </head>
 <body>
     <!-- Котка, която следва курсора -->
-    <img id="cat-cursor" src="https://cdn.jsdelivr.net/gh/kayb22/paw-cursor-host@main/cat_black_emoji.png" alt="Cat Cursor" />
+    <img id="cat-cursor" src="https://pngimg.com/uploads/cat/cat_PNG50467.png" alt="Cat" />
 
     <header>
         <h1><i class="fa-solid fa-paw"></i> Животните и ние</h1>
@@ -517,7 +517,6 @@
     <script>
     // Котка, която следва курсора
     const catCursor = document.getElementById('cat-cursor');
-    // Показва се само на компютър/лаптоп (не и на мобилно)
     if(window.innerWidth > 700) catCursor.style.display = 'block';
     document.addEventListener('mousemove', function(e) {
         if(window.innerWidth <= 700) {
@@ -525,10 +524,8 @@
             return;
         }
         catCursor.style.display = 'block';
-        // Местим котката малко надолу и надясно, за да не е точно под курсора
         catCursor.style.transform = `translate(${e.clientX + 10}px, ${e.clientY + 10}px)`;
     });
-    // Скрий котката, когато мишката напусне прозореца
     document.addEventListener('mouseleave', function() {
         catCursor.style.display = 'none';
     });
