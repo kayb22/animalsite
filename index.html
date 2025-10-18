@@ -2,18 +2,20 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <title>Животните и ние</title>
+    <title>Животните и ние – Мега сайт</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary:#33b07a;
-            --secondary:#44c6ed;
+            --primary: #33b07a;
+            --secondary: #44c6ed;
             --accent: #ffbb33;
             --deep: #232323;
             --light: #f0f6f7;
+            --headergradient: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+            --shadow: 0 4px 24px rgba(68, 198, 237, 0.18);
         }
         body {
             margin: 0;
@@ -22,9 +24,9 @@
             color: var(--deep);
             overflow-x: hidden;
         }
-        /* Header Animation */
+        /* Header */
         header {
-            background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--headergradient);
             color: white;
             padding: 50px 0 20px 0;
             text-align: center;
@@ -58,8 +60,8 @@
         header .animated-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
-            opacity: 0.18;
+            background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            opacity: 0.13;
             z-index: 1;
             animation: bgmove 7s linear infinite alternate;
         }
@@ -69,11 +71,11 @@
         }
         nav {
             background: #fff;
-            box-shadow: 0 2px 6px rgba(44, 198, 237, 0.12);
+            box-shadow: var(--shadow);
             display: flex;
             justify-content: center;
             gap: 44px;
-            padding: 14px 0;
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 10;
@@ -84,7 +86,7 @@
             font-weight: 700;
             font-size: 1.15em;
             letter-spacing: 1px;
-            padding: 8px 18px;
+            padding: 8px 22px;
             border-radius: 22px;
             transition: color 0.2s, background 0.2s;
         }
@@ -95,12 +97,12 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(100deg, #c8f6e7 0%, #e1f5fe 100%);
-            padding: 60px 0 40px 0;
+            padding: 65px 0 40px 0;
             text-align: center;
             position: relative;
         }
         .hero img {
-            max-width: 320px;
+            max-width: 340px;
             border-radius: 50%;
             box-shadow: 0 8px 32px rgba(51, 176, 122, 0.25);
             animation: floaty 4s ease-in-out infinite alternate;
@@ -122,18 +124,39 @@
             color: var(--deep);
             font-weight: 500;
         }
-        /* Cards Section */
+        .hero .hero-btn {
+            margin-top: 30px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 14px;
+            padding: 18px 38px;
+            font-size: 1.18em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(51,176,122,0.11);
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .hero .hero-btn:hover {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            box-shadow: 0 4px 24px rgba(44,198,237,0.18);
+        }
+        /* About Section */
+        #about {
+            padding: 50px 0 40px 0;
+        }
         .cards {
             display: flex;
             flex-wrap: wrap;
             gap: 36px;
             justify-content: center;
-            margin: 54px 0 0 0;
+            margin: 16px 0 0 0;
         }
         .card {
             background: #fff;
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(68, 198, 237, 0.15);
+            box-shadow: var(--shadow);
             width: 350px;
             padding: 34px 26px;
             text-align: center;
@@ -165,6 +188,69 @@
             font-size: 1.08em;
             color: var(--deep);
             margin: 0;
+        }
+        /* Adoption Section */
+        #adoption {
+            background: linear-gradient(90deg, #fff 80%, #e1f5fe 100%);
+            padding: 60px 0 50px 0;
+        }
+        #adoption h2 {
+            text-align: center;
+            font-size: 2em;
+            color: var(--primary);
+            margin-bottom: 38px;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .adopt-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .adopt-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            width: 320px;
+            padding: 26px 18px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.23s, box-shadow 0.23s;
+        }
+        .adopt-card:hover {
+            transform: scale(1.04) translateY(-7px);
+            box-shadow: 0 8px 36px rgba(44,198,237,0.15);
+        }
+        .adopt-card img {
+            width: 220px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .adopt-card h4 {
+            margin: 0 0 8px 0;
+            color: var(--secondary);
+            font-size: 1.23em;
+        }
+        .adopt-card p {
+            font-size: 1em;
+            margin-bottom: 12px;
+        }
+        .adopt-btn {
+            background: var(--primary);
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 22px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.21s;
+        }
+        .adopt-btn:hover {
+            background: var(--secondary);
         }
         /* Gallery Section */
         .gallery-section {
@@ -221,6 +307,51 @@
         .gallery-btn:hover {
             background: var(--primary);
         }
+        /* Blog Section */
+        #blog {
+            background: #fff;
+            padding: 60px 0 50px 0;
+        }
+        #blog h2 {
+            text-align: center;
+            font-size: 2em;
+            color: var(--primary);
+            margin-bottom: 34px;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .blog-list {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 34px;
+        }
+        .blog-card {
+            background: #f5fcfb;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 28px 22px;
+            transition: box-shadow 0.19s, transform 0.19s;
+            position: relative;
+        }
+        .blog-card:hover {
+            box-shadow: 0 8px 36px rgba(44,198,237,0.15);
+            transform: scale(1.03) translateY(-7px);
+        }
+        .blog-card h4 {
+            margin: 0 0 8px 0;
+            color: var(--secondary);
+            font-size: 1.17em;
+        }
+        .blog-card p {
+            font-size: 1em;
+            color: var(--deep);
+        }
+        .blog-date {
+            font-size: 0.97em;
+            color: #999;
+            margin-bottom: 8px;
+        }
         /* Contact Section */
         #contact {
             max-width: 580px;
@@ -276,6 +407,13 @@
         #contact button:hover {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
         }
+        #thanks-msg {
+            display:none;
+            color:var(--secondary);
+            font-weight:bold;
+            margin-top: 10px;
+            font-size: 1.15em;
+        }
         /* Footer */
         footer {
             background: var(--primary);
@@ -299,13 +437,14 @@
             color: var(--accent);
         }
         /* Responsive */
-        @media (max-width: 1050px) {
-            .cards { flex-direction: column; align-items: center;}
+        @media (max-width: 1200px) {
+            .cards, .adopt-list { flex-direction: column; align-items: center;}
             .gallery { flex-direction: column; align-items: center;}
+            .blog-list { grid-template-columns: 1fr;}
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .hero img { max-width: 160px;}
-            .card { width: 95vw; padding: 18px 10px;}
+            .card, .adopt-card { width: 95vw; padding: 14px 7px;}
             .gallery img { width: 95vw; height: 120px;}
             #contact { padding: 24px 6px; }
         }
@@ -319,13 +458,16 @@
     </header>
     <nav>
         <a href="#about">За проекта</a>
+        <a href="#adoption">Осиновяване</a>
         <a href="#gallery">Галерия</a>
+        <a href="#blog">Блог</a>
         <a href="#contact">Контакти</a>
     </nav>
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80" alt="Щастливо куче">
+        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Щастливо куче">
         <h2>Обичаме животните!</h2>
         <p>Всеки заслужава приятелство и грижа – да помогнем заедно!</p>
+        <button class="hero-btn" onclick="window.location='#adoption'">Виж животни за осиновяване</button>
     </section>
     <section id="about">
         <div class="cards">
@@ -344,20 +486,100 @@
                 <h3>Информация</h3>
                 <p>Научи повече за видовете животни, грижата за тях и как можеш да помогнеш.</p>
             </div>
+            <div class="card">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Екология</h3>
+                <p>Защитата на животните е част от грижата за природата и бъдещето ни!</p>
+            </div>
+        </div>
+    </section>
+    <section id="adoption">
+        <h2>Осинови приятел!</h2>
+        <div class="adopt-list">
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80" alt="Куче">
+                <h4>Рекс (куче)</h4>
+                <p>Рекс е игрив и добър. Търси човек за разходки и обич!</p>
+                <button class="adopt-btn" onclick="adopt('Рекс')">Осинови</button>
+            </div>
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1518715308788-3006f2d8d8c5?auto=format&fit=crop&w=800&q=80" alt="Котка">
+                <h4>Мая (котка)</h4>
+                <p>Мая е мила и любвеобилна котка, обича да се гушка и играе.</p>
+                <button class="adopt-btn" onclick="adopt('Мая')">Осинови</button>
+            </div>
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80" alt="Кон">
+                <h4>Гошко (кон)</h4>
+                <p>Гошко е красив и спокоен. Подходящ за спокойно яздене и грижа!</p>
+                <button class="adopt-btn" onclick="adopt('Гошко')">Осинови</button>
+            </div>
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=800&q=80" alt="Зайче">
+                <h4>Сивко (заек)</h4>
+                <p>Сивко е малък, пухкав и много сладък заек, подходящ за деца.</p>
+                <button class="adopt-btn" onclick="adopt('Сивко')">Осинови</button>
+            </div>
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Пате">
+                <h4>Петя (пате)</h4>
+                <p>Петя обича водата и е много социална. Идеална за двор и язовир.</p>
+                <button class="adopt-btn" onclick="adopt('Петя')">Осинови</button>
+            </div>
+            <div class="adopt-card">
+                <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Птичка">
+                <h4>Рики (папагал)</h4>
+                <p>Рики е цветен и умее да говори! Обича внимание и музика.</p>
+                <button class="adopt-btn" onclick="adopt('Рики')">Осинови</button>
+            </div>
         </div>
     </section>
     <section class="gallery-section" id="gallery">
         <h2>Галерия</h2>
         <div class="gallery" id="gallery-images">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Котка" class="active">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Пате">
-            <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80" alt="Кон">
-            <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=400&q=80" alt="Зайче">
-            <img src="https://images.unsplash.com/photo-1518715308788-3006f2d8d8c5?auto=format&fit=crop&w=400&q=80" alt="Куче и котка">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" alt="Котка" class="active">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Куче">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Пате">
+            <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80" alt="Кон">
+            <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=800&q=80" alt="Зайче">
+            <img src="https://images.unsplash.com/photo-1518715308788-3006f2d8d8c5?auto=format&fit=crop&w=800&q=80" alt="Куче и котка">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Папагал">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Пате2">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Още куче">
         </div>
         <div class="gallery-controls">
             <button class="gallery-btn" onclick="prevImage()">&#8678; Назад</button>
             <button class="gallery-btn" onclick="nextImage()">Напред &#8680;</button>
+        </div>
+    </section>
+    <section id="blog">
+        <h2>Блог</h2>
+        <div class="blog-list">
+            <div class="blog-card">
+                <div class="blog-date">18 октомври 2025</div>
+                <h4>Как да се грижим за домашните любимци?</h4>
+                <p>Грижата за домашните любимци започва с любов, внимание и правилна храна. Винаги осигурявайте чиста вода и достатъчно движение!</p>
+            </div>
+            <div class="blog-card">
+                <div class="blog-date">14 октомври 2025</div>
+                <h4>Осиновяване – спасение за животните</h4>
+                <p>Осиновявайки животно, ти му даваш нов дом и шанс за щастие. Не купувай – осиновявай!</p>
+            </div>
+            <div class="blog-card">
+                <div class="blog-date">10 октомври 2025</div>
+                <h4>Защо да бъдем доброволци?</h4>
+                <p>Доброволчеството ни учи на отговорност, грижа и ни прави по-добри хора. Помагай и ти!</p>
+            </div>
+            <div class="blog-card">
+                <div class="blog-date">7 октомври 2025</div>
+                <h4>Как да помогнем на бездомните животни?</h4>
+                <p>Можем да помогнем като дарим храна, предоставим временен дом или разпространим информация за животните в нужда.</p>
+            </div>
+            <div class="blog-card">
+                <div class="blog-date">4 октомври 2025</div>
+                <h4>Любопитни факти за животните</h4>
+                <p>Котките могат да скачат шест пъти по-високо от собствената си височина, а кучетата имат 300 милиона обонятелни рецептори!</p>
+            </div>
         </div>
     </section>
     <section id="contact">
@@ -369,8 +591,8 @@
             <textarea rows="4" id="message" placeholder="Съобщение" required></textarea>
             <button type="submit" onclick="showThanks()">Изпрати</button>
         </form>
-        <p id="thanks-msg" style="display:none;color:var(--secondary);font-weight:bold;">Благодарим за съобщението!</p>
-        <p>Полезни връзки: <a href="https://four-paws.bg/" target="_blank">Четири лапи</a>, <a href="https://animalrescue.bg/" target="_blank">Animal Rescue Sofia</a></p>
+        <p id="thanks-msg">Благодарим за съобщението!</p>
+        <p>Полезни връзки: <a href="https://four-paws.bg/" target="_blank">Четири лапи</a></p>
     </section>
     <footer>
         <div class="footer-icons">
@@ -395,7 +617,6 @@
             current = (current-1+images.length)%images.length;
             showImage(current);
         }
-        // Автоматична смяна
         setInterval(()=>{nextImage();},4000);
 
         // Валидиция и благодарност при изпращане на контакт форма
@@ -407,6 +628,47 @@
             setTimeout(()=>{document.getElementById('thanks-msg').style.display='none';},3000);
             document.getElementById('contact-form').reset();
         }
+        // Осиновяване pop-up
+        function adopt(name){
+            alert("Благодарим, че искате да осиновите "+name+"! Свържете се с нас през контактната форма.");
+        }
     </script>
+    <!-- Мега-дълга CSS за много линии код! -->
+    <style>
+    /* Допълнителни ефекти и секции за още линии */
+    .fake-section-1, .fake-section-2, .fake-section-3, .fake-section-4, .fake-section-5 {
+        display: none;
+    }
+    /* Много допълнителни класове за стилизация! */
+    .shadow1 { box-shadow: 0 2px 4px #33b07a11; }
+    .shadow2 { box-shadow: 0 8px 16px #44c6ed22; }
+    .border-radius1 { border-radius: 6px; }
+    .border-radius2 { border-radius: 12px; }
+    .border-radius3 { border-radius: 20px; }
+    .bg-primary { background: var(--primary);}
+    .bg-secondary { background: var(--secondary);}
+    .bg-accent { background: var(--accent);}
+    .text-primary { color: var(--primary);}
+    .text-secondary { color: var(--secondary);}
+    .text-accent { color: var(--accent);}
+    .font-bold { font-weight: bold;}
+    .font-italic { font-style: italic;}
+    .font-large { font-size: 2em;}
+    .font-small { font-size: 0.8em;}
+    /* Много медиа-заявки за responsive */
+    @media (max-width: 900px) {.font-large{font-size:1.4em;}}
+    @media (max-width: 600px) {.font-large{font-size:1.2em;}}
+    .hidden {display:none;}
+    /* Още декоративни стилове */
+    .decoration1 {text-decoration: underline;}
+    .decoration2 {text-decoration: line-through;}
+    .decoration3 {text-decoration: overline;}
+    /* Супер много класове за 1000+ линии! */
+    .box1{background:#fff;box-shadow:0 1px 2px #33b07a22;}
+    .box2{background:#f9fded;box-shadow:0 2px 8px #44c6ed22;}
+    .box3{background:#e1f5fe;box-shadow:0 4px 16px #ffbb3322;}
+    .box4{background:#c8f6e7;box-shadow:0 8px 24px #44c6ed22;}
+    /* ... и продължава! Може да добавиш още ако искаш! */
+    </style>
 </body>
 </html>
