@@ -8,150 +8,239 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        :root {
+            --primary:#33b07a;
+            --secondary:#44c6ed;
+            --accent: #ffbb33;
+            --deep: #232323;
+            --light: #f0f6f7;
+        }
         body {
             margin: 0;
             font-family: 'Roboto', Arial, sans-serif;
-            background: #f0f6f7;
-            color: #232323;
+            background: var(--light);
+            color: var(--deep);
+            overflow-x: hidden;
         }
+        /* Header Animation */
         header {
-            background: linear-gradient(90deg, #33b07a 0%, #44c6ed 100%);
+            background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 30px 0 10px 0;
+            padding: 50px 0 20px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         header h1 {
             font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 2.8em;
+            font-size: 3em;
             letter-spacing: 2px;
             margin: 0;
+            position: relative;
+            z-index: 2;
+            animation: slidein 1.2s cubic-bezier(.63,.09,.45,.99);
+        }
+        @keyframes slidein {
+            0% { opacity:0; transform: translateY(-40px);}
+            100% { opacity:1; transform: translateY(0);}
         }
         header p {
-            font-size: 1.3em;
-            margin-top: 8px;
+            font-size: 1.5em;
+            margin-top: 16px;
             font-weight: 500;
+            z-index: 2;
+            animation: fadeup 1.7s cubic-bezier(.63,.09,.45,.99);
+        }
+        @keyframes fadeup {
+            0% { opacity:0; transform: translateY(40px);}
+            100% { opacity:1; transform: translateY(0);}
+        }
+        header .animated-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            opacity: 0.18;
+            z-index: 1;
+            animation: bgmove 7s linear infinite alternate;
+        }
+        @keyframes bgmove {
+            0% { background-position: center top;}
+            100% { background-position: center bottom;}
         }
         nav {
             background: #fff;
-            box-shadow: 0 2px 6px rgba(44, 198, 237, 0.07);
+            box-shadow: 0 2px 6px rgba(44, 198, 237, 0.12);
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 44px;
             padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
-            color: #33b07a;
+            color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1em;
-            transition: color 0.2s;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            padding: 8px 18px;
+            border-radius: 22px;
+            transition: color 0.2s, background 0.2s;
         }
         nav a:hover {
-            color: #44c6ed;
+            color: #fff;
+            background: var(--secondary);
         }
+        /* Hero Section */
         .hero {
             background: linear-gradient(100deg, #c8f6e7 0%, #e1f5fe 100%);
-            padding: 40px 0;
+            padding: 60px 0 40px 0;
             text-align: center;
+            position: relative;
         }
         .hero img {
-            max-width: 250px;
+            max-width: 320px;
             border-radius: 50%;
-            box-shadow: 0 4px 16px rgba(51, 176, 122, 0.15);
+            box-shadow: 0 8px 32px rgba(51, 176, 122, 0.25);
+            animation: floaty 4s ease-in-out infinite alternate;
+        }
+        @keyframes floaty {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-20px);}
         }
         .hero h2 {
-            font-size: 2em;
-            margin-top: 18px;
+            font-size: 2.6em;
+            margin-top: 24px;
             font-family: 'Montserrat', Arial, sans-serif;
-            color: #33b07a;
+            color: var(--primary);
+            text-shadow: 0 2px 8px rgba(51,176,122,0.09);
         }
         .hero p {
-            font-size: 1.2em;
-            margin-top: 8px;
-            color: #232323;
+            font-size: 1.3em;
+            margin-top: 10px;
+            color: var(--deep);
+            font-weight: 500;
         }
+        /* Cards Section */
         .cards {
             display: flex;
             flex-wrap: wrap;
-            gap: 28px;
+            gap: 36px;
             justify-content: center;
-            margin: 40px 0 0 0;
+            margin: 54px 0 0 0;
         }
         .card {
             background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 16px rgba(68, 198, 237, 0.11);
-            width: 320px;
-            padding: 28px 22px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(68, 198, 237, 0.15);
+            width: 350px;
+            padding: 34px 26px;
             text-align: center;
-            transition: transform 0.2s;
+            transition: transform 0.27s, box-shadow 0.27s;
+            position: relative;
+            overflow: hidden;
         }
         .card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 8px 32px rgba(68, 198, 237, 0.17);
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 16px 48px rgba(68, 198, 237, 0.25);
+            background: linear-gradient(120deg, #f9fded 80%, #c8f6e7 100%);
         }
         .card i {
-            font-size: 2.4em;
-            color: #44c6ed;
-            margin-bottom: 12px;
+            font-size: 2.7em;
+            color: var(--secondary);
+            margin-bottom: 18px;
+            animation: rotatecard 2.7s linear infinite;
+        }
+        @keyframes rotatecard {
+            0% {transform: rotate(-10deg);}
+            100% {transform: rotate(10deg);}
         }
         .card h3 {
-            font-size: 1.3em;
-            margin: 0 0 8px 0;
-            color: #33b07a;
+            font-size: 1.5em;
+            margin: 0 0 14px 0;
+            color: var(--primary);
         }
         .card p {
-            font-size: 1.05em;
-            color: #232323;
+            font-size: 1.08em;
+            color: var(--deep);
             margin: 0;
         }
+        /* Gallery Section */
         .gallery-section {
-            background: #e7f6f9;
-            padding: 40px 0;
+            background: linear-gradient(90deg, #e7f6f9 80%, #fdf6ed 100%);
+            padding: 60px 0 50px 0;
         }
         .gallery-section h2 {
             text-align: center;
             font-size: 2em;
-            color: #44c6ed;
-            margin-bottom: 30px;
+            color: var(--secondary);
+            margin-bottom: 38px;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: 22px;
+            gap: 28px;
             justify-content: center;
+            align-items: center;
+            min-height: 200px;
         }
         .gallery img {
-            width: 240px;
-            height: 160px;
+            width: 270px;
+            height: 190px;
             object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(51, 176, 122, 0.12);
-            transition: transform 0.2s;
+            border-radius: 18px;
+            box-shadow: 0 2px 18px rgba(51, 176, 122, 0.14);
+            transition: transform 0.28s, box-shadow 0.28s;
+        }
+        .gallery img.active {
+            border: 4px solid var(--accent);
+            box-shadow: 0 6px 36px rgba(255, 187, 51, 0.22);
+            transform: scale(1.05);
         }
         .gallery img:hover {
-            transform: scale(1.07);
+            transform: scale(1.11);
         }
+        .gallery-controls {
+            text-align: center;
+            margin-top: 24px;
+        }
+        .gallery-btn {
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 9px 26px;
+            font-size: 1.08em;
+            font-weight: bold;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .gallery-btn:hover {
+            background: var(--primary);
+        }
+        /* Contact Section */
         #contact {
-            max-width: 500px;
-            margin: 50px auto;
+            max-width: 580px;
+            margin: 60px auto 0 auto;
             background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(44, 198, 237, 0.07);
-            padding: 30px 26px;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(44, 198, 237, 0.14);
+            padding: 40px 30px;
         }
         #contact h2 {
-            color: #33b07a;
-            margin-bottom: 12px;
+            color: var(--primary);
+            margin-bottom: 18px;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         #contact p, #contact a {
-            font-size: 1.1em;
-            color: #232323;
+            font-size: 1.13em;
+            color: var(--deep);
         }
         #contact a {
-            color: #44c6ed;
+            color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
         }
@@ -162,45 +251,69 @@
             margin-top: 18px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
         #contact input, #contact textarea {
-            padding: 10px 12px;
+            padding: 12px 14px;
             border-radius: 8px;
             border: 1px solid #c8f6e7;
-            font-size: 1em;
+            font-size: 1.08em;
             font-family: inherit;
+            background: #f9fded;
         }
         #contact button {
-            background: linear-gradient(90deg, #33b07a 0%, #44c6ed 100%);
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
             color: #fff;
             border: none;
             border-radius: 8px;
-            padding: 12px;
+            padding: 14px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
+            box-shadow: 0 2px 10px rgba(51,176,122,0.07);
             transition: background 0.2s;
         }
         #contact button:hover {
-            background: linear-gradient(90deg, #44c6ed 0%, #33b07a 100%);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
         }
+        /* Footer */
         footer {
-            background: #33b07a;
+            background: var(--primary);
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            font-size: 1.1em;
+            padding: 26px 0;
+            margin-top: 50px;
+            font-size: 1.13em;
+            font-family: 'Roboto', Arial, sans-serif;
         }
-        @media (max-width: 900px) {
-            .cards { flex-direction: column; align-items: center; }
-            .gallery { flex-direction: column; align-items: center; }
+        .footer-icons {
+            margin: 0 0 10px 0;
+        }
+        .footer-icons a {
+            color: #fff;
+            margin: 0 8px;
+            font-size: 1.6em;
+            transition: color 0.2s;
+        }
+        .footer-icons a:hover {
+            color: var(--accent);
+        }
+        /* Responsive */
+        @media (max-width: 1050px) {
+            .cards { flex-direction: column; align-items: center;}
+            .gallery { flex-direction: column; align-items: center;}
+        }
+        @media (max-width: 600px) {
+            .hero img { max-width: 160px;}
+            .card { width: 95vw; padding: 18px 10px;}
+            .gallery img { width: 95vw; height: 120px;}
+            #contact { padding: 24px 6px; }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="animated-bg"></div>
         <h1><i class="fa-solid fa-paw"></i> Животните и ние</h1>
         <p>Грижа, приятелство, информация</p>
     </header>
@@ -235,27 +348,65 @@
     </section>
     <section class="gallery-section" id="gallery">
         <h2>Галерия</h2>
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Котка">
+        <div class="gallery" id="gallery-images">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Котка" class="active">
             <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Пате">
             <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80" alt="Кон">
             <img src="https://images.unsplash.com/photo-1431057258019-44c5635c5dfa?auto=format&fit=crop&w=400&q=80" alt="Зайче">
             <img src="https://images.unsplash.com/photo-1518715308788-3006f2d8d8c5?auto=format&fit=crop&w=400&q=80" alt="Куче и котка">
         </div>
+        <div class="gallery-controls">
+            <button class="gallery-btn" onclick="prevImage()">&#8678; Назад</button>
+            <button class="gallery-btn" onclick="nextImage()">Напред &#8680;</button>
+        </div>
     </section>
     <section id="contact">
         <h2>Контакти</h2>
         <p>Ако искате да помогнете или имате въпроси, пишете ни:</p>
-        <form>
-            <input type="text" placeholder="Вашето име" required>
-            <input type="email" placeholder="Вашият имейл" required>
-            <textarea rows="4" placeholder="Съобщение"></textarea>
-            <button type="submit" disabled>Изпрати (примерна форма)</button>
+        <form id="contact-form" onsubmit="return false;">
+            <input type="text" id="name" placeholder="Вашето име" required>
+            <input type="email" id="email" placeholder="Вашият имейл" required>
+            <textarea rows="4" id="message" placeholder="Съобщение" required></textarea>
+            <button type="submit" onclick="showThanks()">Изпрати</button>
         </form>
+        <p id="thanks-msg" style="display:none;color:var(--secondary);font-weight:bold;">Благодарим за съобщението!</p>
         <p>Полезни връзки: <a href="https://four-paws.bg/" target="_blank">Четири лапи</a>, <a href="https://animalrescue.bg/" target="_blank">Animal Rescue Sofia</a></p>
     </section>
     <footer>
-        &copy; 2025 Животните и ние | Създадено с ❤️ за животните
+        <div class="footer-icons">
+            <a href="https://facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:animalsite@school.bg" title="Имейл"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        &copy; 2025 Животните и ние | Създадено с <span style="color:var(--accent);font-size:1.2em;">&#10084;</span> за животните
     </footer>
+    <script>
+        // Галерия с автоматична смяна и бутони
+        const images = document.querySelectorAll('#gallery-images img');
+        let current = 0;
+        function showImage(idx){
+            images.forEach((img,i)=>img.classList.toggle('active',i===idx));
+        }
+        function nextImage(){
+            current = (current+1)%images.length;
+            showImage(current);
+        }
+        function prevImage(){
+            current = (current-1+images.length)%images.length;
+            showImage(current);
+        }
+        // Автоматична смяна
+        setInterval(()=>{nextImage();},4000);
+
+        // Валидиция и благодарност при изпращане на контакт форма
+        function showThanks(){
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            if(name.length<2 || !email.includes('@')){return;}
+            document.getElementById('thanks-msg').style.display='block';
+            setTimeout(()=>{document.getElementById('thanks-msg').style.display='none';},3000);
+            document.getElementById('contact-form').reset();
+        }
+    </script>
 </body>
 </html>
